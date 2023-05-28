@@ -1395,6 +1395,12 @@ address {
   outline: none;
 }
 
+@media only screen and (min-width: 320px) {
+  .menu-toggle {
+    margin-left: calc(100vw - 179px);
+  }
+}
+
 @media only screen and (min-width: 428px) {
   .menu-toggle {
     margin-left: 249px;
