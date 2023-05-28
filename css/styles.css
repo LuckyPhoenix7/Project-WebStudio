@@ -304,14 +304,14 @@ address {
   background-color: var(--color-navy-blue);
 
   max-height: 432px;
-  /* width: 428px; */
+  width: 428px;
   padding: 112px 0;
 }
 
 @media only screen and (min-width: 429px) {
   .hero {
     max-height: 436px;
-    /* width: 768px; */
+    width: 768px;
   }
 }
 
@@ -1422,7 +1422,7 @@ address {
   flex-direction: column;
 
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 40px;
   padding-top: 80px;
   background-color: var(--color-white);
