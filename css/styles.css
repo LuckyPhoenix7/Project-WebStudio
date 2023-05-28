@@ -154,6 +154,12 @@ button {
   align-items: center;
 }
 
+@media only screen and (max-width: 767px) {
+  .header-container {
+    width: 100%;
+  }
+}
+
 .header-logo-left {
   color: var(--color-iris);
 
@@ -319,7 +325,7 @@ address {
   .hero {
     max-height: 600px;
     width: 1440px;
-    padding: 118px 0;
+    padding: 188px 0;
   }
 }
 
@@ -404,7 +410,7 @@ address {
   text-transform: capitalize;
 
   margin: 0 auto;
-  padding-bottom: 72px;
+  margin-bottom: 80px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -414,13 +420,13 @@ address {
     font-size: 56px;
     line-height: 1.07;
 
-    padding-bottom: 36px;
+    margin-bottom: 40px;
   }
 }
 
 @media only screen and (min-width: 1158px) {
   .hero-title {
-    padding-bottom: 48px;
+    margin-bottom: 48px;
   }
 }
 
@@ -480,18 +486,22 @@ address {
 }
 
 .about-items {
-  width: calc((100% - 72px) / var(--section-items));
+  width: calc((100% - var(--section-gap)) / var(--section-items));
+  --section-items: 1;
+  --section-gap: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .about-items {
     --section-items: 2;
+    --section-gap: 24px;
   }
 }
 
 @media only screen and (min-width: 1158px) {
   .about-items {
     --section-items: 4;
+    --section-gap: 72px;
   }
 }
 
@@ -700,13 +710,8 @@ address {
 
 .customers-items {
   width: calc((100% - var(--section-width)) / var(--section-items));
-}
-
-@media only screen and (min-width: 320px) {
-  .customers-items {
-    --section-items: 2;
-    --section-width: 24px;
-  }
+  --section-items: 2;
+  --section-width: 16px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -763,14 +768,25 @@ address {
 
 .footer {
   background-color: var(--color-navy-blue);
+
+  padding: 96px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer {
+    padding: 100px 0;
+  }
 }
 
 .footer-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding: 96px 15px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -778,14 +794,16 @@ address {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
-    padding-left: 108px;
+
+    width: 582px;
   }
 }
 
 @media only screen and (min-width: 1158px) {
   .footer-item {
-    padding: 100px 0;
     flex-wrap: nowrap;
+
+    width: auto;
   }
 }
 
@@ -793,7 +811,6 @@ address {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 72px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -803,9 +820,15 @@ address {
   }
 }
 
+@media only screen and (max-width: 1157px) {
+  .footer-info {
+    margin-bottom: 72px;
+  }
+}
+
 @media only screen and (min-width: 1158px) {
   .footer-info {
-    margin: 0 120px 0 0;
+    margin-right: 120px;
   }
 }
 
@@ -830,8 +853,14 @@ address {
 .footer-text {
   color: var(--color-cloud);
 
-  width: 264px;
+  width: 268px;
   text-align: justify;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-text {
+    width: 264px;
+  }
 }
 
 .footer-socials {
@@ -929,7 +958,8 @@ address {
 
   display: flex;
   align-items: center;
-  width: 290px;
+
+  width: 288px;
   height: 40px;
   font-size: 12px;
   line-height: 2;
@@ -939,6 +969,18 @@ address {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+}
+
+@media only screen and (min-width: 320px) {
+  .footer-subscribe-email {
+    width: calc(100vw - 32px);
+  }
+}
+
+@media only screen and (min-width: 428px) {
+  .footer-subscribe-email {
+    width: 396px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1386,25 +1428,13 @@ address {
   justify-content: center;
 
   margin: 0;
-  margin-left: 141px;
+  margin-left: auto;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
   border: none;
   border-radius: 50%;
   outline: none;
-}
-
-@media only screen and (min-width: 320px) {
-  .menu-toggle {
-    margin-left: calc(100vw - 179px);
-  }
-}
-
-@media only screen and (min-width: 428px) {
-  .menu-toggle {
-    margin-left: 249px;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1539,6 +1569,18 @@ address {
 }
 
 .mobile-socials.footer-socials-list {
-  gap: 56px;
+  gap: 20px;
   justify-content: flex-start;
+}
+
+@media only screen and (min-width: 320px) {
+  .mobile-socials.footer-socials-list {
+    gap: calc((100vw - 258px) / 3);
+  }
+}
+
+@media only screen and (min-width: 428px) {
+  .mobile-socials.footer-socials-list {
+    gap: 56px;
+  }
 }
